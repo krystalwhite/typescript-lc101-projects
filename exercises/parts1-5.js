@@ -15,17 +15,45 @@ var daysToMars = hoursToMars / 24;
 function getDaysToLocation(kilometersAway) {
     var milesAway = kilometersAway * milesPerKilometer;
     var hoursToLocation = milesAway / speedMph;
-    return hoursToLocation;
+    var daysToLocation = hoursToLocation / 24;
+    return daysToLocation;
 }
 console.log("The number of days for " + spacecraftName + " to reach Mars is " + getDaysToLocation(kilometersToMars) + ".");
 console.log("The number of days for " + spacecraftName + " to reach the Moon is " + getDaysToLocation(kilometersToMoon) + ".");
-// Move your output statement from part 2 here. Update the template literal to call
-// the function and print the outputs for a Mars trip and a moon trip.
+/*
 // Part 4: Create a Spacecraft Class
-// Create an instance of the class here:
-// Move your output statements from part 3 here. Update the template literals use the
-// instance of the class.
+let kilometersToMars : number = 225000000;
+let kilometersToMoon : number = 384400;
+
+class Spacecraft {
+    name : string;
+    speedMph : number;
+    milesPerKilometer : number = 0.621;
+    
+    constructor (name : string, speedMph : number) {
+        this.name = name;
+        this.speedMph = speedMph;
+        this.milesPerKilometer = 0.621;
+    }
+
+    getDaysToLocation (kilometersAway : number) : number {
+        let milesAway : number = kilometersAway * this.milesPerKilometer;
+        let hoursToLocation : number = milesAway / this.speedMph;
+        let daysToLocation : number = hoursToLocation / 24;
+        return daysToLocation;
+    }
+}
+
+let spaceShuttle = new Spacecraft('Determination', 17500);
+console.log(`Our shuttle ${spaceShuttle.name} will take ${spaceShuttle.getDaysToLocation(kilometersToMars)} days to reach Mars.`);
+console.log(`Our shuttle ${spaceShuttle.name} will take ${spaceShuttle.getDaysToLocation(kilometersToMoon)} days to reach the Moon.`);
+
+
 // Part 5: Export and Import the SpaceLocation Class
 // Add the required import statement BEFORE the part 1 concent.
+
+
 // Add the printDaysToLocation function to the Spacecraft class.
+
 // Paste in the code from step 6 here:
+*/ 
