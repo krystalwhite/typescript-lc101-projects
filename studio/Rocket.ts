@@ -7,8 +7,38 @@ export class Rocket implements Payload {
     totalCapacityKg : number;
     massKg: number;
 
-    constructor(name : string, totalCapacityKg : number, cargoItems : string[], astronauts : string[]) {
+    constructor(name : string, totalCapacityKg : number, cargoItems : Cargo[], astronauts : Astronaut[]) {
         this.name = name;
         this.totalCapacityKg = totalCapacityKg;
+        // this.cargoItems = [];
+        // this.astronauts = [];
     }
+
+    sumMass ( items: Payload[] ): number {
+        let sum : number = 0;
+        for (let i = 0; i < items.length; i++) {
+            sum += items[i].massKg;
+        }
+        return sum;
+    }
+
+    currentMassKg(): number {
+        let sum : number;
+        sum = this.sumMass(this.cargoItems) + this.sumMass(this.astronauts);
+        return sum;
+    }
+
+    canAdd(item : Payload) : boolean {
+        if (this.currentMassKg + item.massKg <= this.totalCapacityKg) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    addCargo (cargo : Cargo) : boolean {
+        
+    }
+
+
 }
