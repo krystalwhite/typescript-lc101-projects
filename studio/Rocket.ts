@@ -29,7 +29,7 @@ export class Rocket implements Payload {
     }
 
     canAdd(item : Payload) : boolean {
-        if (this.currentMassKg + item.massKg <= this.totalCapacityKg) {
+        if (this.currentMassKg() + item.massKg <= this.totalCapacityKg) {
             return true;
         } else {
             return false;
@@ -37,7 +37,21 @@ export class Rocket implements Payload {
     }
 
     addCargo (cargo : Cargo) : boolean {
-        
+        if (this.canAdd(cargo) === true) {
+            this.cargoItems.push(cargo);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    addAstronaut (astronaut : Astronaut) : boolean {
+        if (this.canAdd(astronaut) === true) {
+            this.astronauts.push(astronaut);
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
