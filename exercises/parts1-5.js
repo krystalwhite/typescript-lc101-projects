@@ -35,7 +35,6 @@ var Spacecraft = /** @class */ (function () {
         this.milesPerKilometer = 0.621;
         this.name = name;
         this.speedMph = speedMph;
-        this.milesPerKilometer = 0.621;
     }
     Spacecraft.prototype.getDaysToLocation = function (kilometersAway) {
         var milesAway = kilometersAway * this.milesPerKilometer;

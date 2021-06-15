@@ -43,7 +43,6 @@ class Spacecraft {
     constructor (name : string, speedMph : number) {
         this.name = name;
         this.speedMph = speedMph;
-        this.milesPerKilometer = 0.621;
     }
 
     getDaysToLocation (kilometersAway : number) : number {
